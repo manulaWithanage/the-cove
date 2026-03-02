@@ -78,21 +78,21 @@ export default function Hero() {
                 </div>
 
                 {/* Elegant Trust Row placed at absolute bottom */}
-                <div className="absolute bottom-8 left-0 w-full px-6 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-                    <div className="container mx-auto border-t border-white/20 pt-6">
-                        <div className="flex flex-row items-center justify-center md:justify-between gap-6 md:gap-0 text-white/60 text-xs tracking-widest uppercase font-semibold flex-wrap">
-                            <div className="flex items-center gap-2">
-                                <Mountain size={14} className="text-sunrise-500" />
+                <div className="absolute bottom-4 md:bottom-8 left-0 w-full px-4 md:px-6 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+                    <div className="container mx-auto border-t border-white/20 pt-4 md:pt-6">
+                        <div className="flex flex-row items-center justify-center md:justify-between gap-x-4 gap-y-2 md:gap-0 text-white/60 text-[10px] md:text-xs tracking-widest uppercase font-semibold flex-wrap">
+                            <div className="flex items-center gap-1.5 md:gap-2">
+                                <Mountain size={12} className="text-sunrise-500 md:w-[14px] md:h-[14px]" />
                                 <span>Scenic Views</span>
                             </div>
                             <div className="hidden md:block h-3 w-px bg-white/20" />
-                            <div className="flex items-center gap-2">
-                                <Coffee size={14} className="text-sunrise-500" />
+                            <div className="flex items-center gap-1.5 md:gap-2">
+                                <Coffee size={12} className="text-sunrise-500 md:w-[14px] md:h-[14px]" />
                                 <span>Tea Country</span>
                             </div>
                             <div className="hidden md:block h-3 w-px bg-white/20" />
-                            <div className="flex items-center gap-2">
-                                <MapPin size={14} className="text-sunrise-500" />
+                            <div className="flex items-center gap-1.5 md:gap-2 w-full md:w-auto justify-center md:justify-start mt-1 md:mt-0">
+                                <MapPin size={12} className="text-sunrise-500 md:w-[14px] md:h-[14px]" />
                                 <span>Rikillagaskada</span>
                             </div>
                         </div>
