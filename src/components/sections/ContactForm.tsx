@@ -1,14 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
-import { submitContact } from "@/app/actions/contact";
+import { useState } from "react";
 import { siteConfig } from "@/lib/constants";
 import { CalendarDays, Users, Coffee, CheckCircle, ArrowRight } from "lucide-react";
-
-const initialState = {
-    success: false,
-    message: "",
-};
 
 const includes = [
     { icon: CalendarDays, text: "Flexible check-in from 2:00 PM" },
@@ -17,7 +11,51 @@ const includes = [
 ];
 
 export default function ContactForm() {
-    const [state, formAction, isPending] = useActionState(submitContact, initialState);
+    const [state, setState] = useState({ success: false, message: "" });
+    const [isPending, setIsPending] = useState(false);
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setIsPending(true);
+        setState({ success: false, message: "" });
+
+        const formData = new FormData(e.currentTarget);
+
+        // Honeypot check
+        if (formData.get("bot_field")) {
+            setState({ success: true, message: "Thank you for your inquiry." });
+            setIsPending(false);
+            return;
+        }
+
+        const name = formData.get("name");
+        const phone = formData.get("phone");
+        const dates = formData.get("dates");
+        const guests = formData.get("guests");
+        const message = formData.get("message");
+
+        // Basic Client-side validation
+        if (!name || !phone || !dates || !guests) {
+            setState({ success: false, message: "Please fill in all required fields." });
+            setIsPending(false);
+            return;
+        }
+
+        const data = { name, phone, dates, guests, message };
+
+        // TODO: Integrate email provider API here (e.g., Resend, SendGrid) replacing this simulate
+        console.log("--- New Booking Inquiry ---");
+        console.log(JSON.stringify(data, null, 2));
+
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        setState({
+            success: true,
+            message: "Thank you! We have received your inquiry and will contact you shortly via WhatsApp or Phone."
+        });
+        setIsPending(false);
+    }
 
     return (
         <section id="booking" className="py-24 bg-sand-100">
@@ -78,7 +116,7 @@ export default function ContactForm() {
                                 </button>
                             </div>
                         ) : (
-                            <form action={formAction} className="flex flex-col gap-8">
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-8">
                                 {/* Honeypot */}
                                 <div aria-hidden="true" className="hidden">
                                     <input type="text" name="bot_field" tabIndex={-1} autoComplete="off" />
