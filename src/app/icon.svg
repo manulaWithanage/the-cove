@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Minimalist Mountain Peak for The Cove -->
+  <!-- Main Peak -->
+  <path d="M32 12 L16 48 L48 48 Z" fill="#E6C48B" />
+  <!-- Shadow/Secondary Peak giving it depth -->
+  <path d="M32 12 L32 48 L48 48 Z" fill="#D4A75E" />
+  <!-- A subtle rising sun or moon -->
+  <circle cx="20" cy="24" r="6" fill="#1C3F35" />
+</svg>
