@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Cove at Rikillagaskada
 
-## Getting Started
+A modern, mobile-first marketing website for a scenic cabana stay in Sri Lanka.
+Built with Next.js App Router, Tailwind CSS v4, and TypeScript.
 
-First, run the development server:
+## 🚀 Setup & Run
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Build for production**
+   ```bash
+   npm run build
+   npm start
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✏️ How to Update Content & Assets
 
-## Learn More
+### 1. Global Details (Phone, Email, URLs)
+Update the `siteConfig` object inside `src/lib/constants.ts`.
+This controls the global brand name, WhatsApp deep links, and SEO metadata.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Text & Copy
+Navigate to the `src/components/sections/` folder.
+* **Hero Text:** Edit `Hero.tsx`.
+* **Cabana Details & Prices:** Edit `Cabanas.tsx`.
+* **Experiences & Testimonials:** Edit `Experiences.tsx` and `Testimonials.tsx`.
+* **FAQ:** Add or remove questions in `LocationFAQ.tsx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Images & Placeholder Gradients
+Currently, images are placeholder gradients with "TODO" text. 
+To update them:
+1. Place your actual high-quality JPEG/PNG/WebP files inside the `public/images/` directory.
+2. Ensure their filenames match the placeholders, such as `hero.jpg`, `cabana-1.jpg`, `gallery-1.jpg`, etc.
+3. Replace the `TODO` gradient `div` tags in components (like `Hero.tsx`, `Cabanas.tsx`, `Gallery.tsx`) with the `<img />` or `<Image />` component pointing to `/images/your-file.jpg`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📧 Connecting the Contact Form to Email
 
-## Deploy on Vercel
+The inquiry form is located at `src/components/sections/ContactForm.tsx`.
+It currently logs submissions to the Node.js console via Next.js Server Actions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To send real emails (e.g., using **Resend**):
+1. Install Resend: `npm install resend`
+2. Get an API key from [resend.com](https://resend.com) and add it to your `.env.local` file:
+   ```env
+   RESEND_API_KEY=re_123456789
+   ```
+3. Open `src/app/actions/contact.ts`.
+4. Import Resend and replace the `console.log` block with:
+   ```typescript
+   import { Resend } from 'resend';
+   const resend = new Resend(process.env.RESEND_API_KEY);
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   await resend.emails.send({
+     from: 'onboarding@resend.dev',
+     to: siteConfig.contact.email,
+     subject: `New Booking Inquiry from ${data.name}`,
+     html: `<p>Dates: ${data.dates}</p><p>Guests: ${data.guests}</p><p>Phone: ${data.phone}</p><p>Message: ${data.message}</p>`
+   });
+   ```
+
+## 🔒 Security & Spam Prevention
+The form includes a simple "Honeypot" field (`bot_field`), which is hidden from real users. Bots that auto-fill hidden fields will trigger a silent rejection pattern built into `src/app/actions/contact.ts`.
