@@ -1,4 +1,4 @@
-name = "the-cove-worker"
+name = "the-cove"
 main = "worker.js"
 compatibility_date = "2024-03-20"
 
