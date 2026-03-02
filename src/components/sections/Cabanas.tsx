@@ -27,8 +27,8 @@ export default function Cabanas() {
     <section id="stay" className="py-32 bg-white selection:bg-sand-100">
       <div className="container mx-auto px-6 sm:px-12 max-w-7xl">
 
-        <div className="mb-24 md:flex items-end justify-between border-b border-sand-200/50 pb-12">
-          <div className="max-w-2xl">
+        <div className="mb-24 flex flex-col md:flex-row items-start md:items-end justify-start gap-8 md:gap-16 lg:gap-24 border-b border-sand-200/50 pb-12">
+          <div className="max-w-xl md:min-w-[400px]">
             <p className="text-forest-700 font-sans tracking-[0.2em] text-xs uppercase font-semibold mb-6">
               The Collection
             </p>
@@ -36,7 +36,7 @@ export default function Cabanas() {
               Your Alpine <span className="italic text-forest-800">Retreat</span>
             </h2>
           </div>
-          <p className="text-lg text-sand-800/70 font-light max-w-sm mt-8 md:mt-0 leading-relaxed md:text-right">
+          <p className="text-lg text-sand-800/70 font-light max-w-md leading-relaxed">
             Intentionally designed spaces that frame the landscape and invite the outside in.
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function Cabanas() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-row flex-wrap items-center justify-start gap-6 md:gap-12">
                   <span className="text-2xl font-serif text-sand-900">{cabana.price}</span>
                   <a
                     href="#booking"

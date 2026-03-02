@@ -39,6 +39,9 @@ export default function Testimonials() {
     return (
         <section id="testimonials" className="py-32 bg-forest-900 text-sand-50 relative overflow-hidden">
 
+            {/* Subtle transition gradient from Gallery (sand-900) to Testimonials (forest-900) */}
+            <div className="absolute top-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-sand-900 to-transparent pointer-events-none z-0" />
+
             {/* Subtle texture overlay */}
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] pointer-events-none" />
 

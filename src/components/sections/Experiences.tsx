@@ -56,7 +56,7 @@ export default function Experiences() {
             <div className="container mx-auto px-6 sm:px-12 max-w-7xl">
                 <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-8">
                     <div className="max-w-xl">
-                        <h2 className="text-4xl lg:text-5xl font-serif text-forest-900 mb-6 font-light">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-forest-900 mb-6 font-light">
                             Beyond <span className="italic">The Cove at Rikillagaskada</span>
                         </h2>
                         <p className="text-lg text-sand-800/80 font-light leading-relaxed">

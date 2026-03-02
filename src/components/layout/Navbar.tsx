@@ -33,8 +33,8 @@ export default function Navbar() {
             <nav className="container mx-auto px-4 h-16 sm:h-20 flex items-center justify-between">
                 <a href="#" className={`flex flex-col font-serif leading-none transition-colors group ${scrolled ? "text-forest-900" : "text-white"}`}>
                     <span className={`text-2xl md:text-3xl tracking-wide font-medium transition-colors ${scrolled ? "group-hover:text-forest-700" : "group-hover:text-sand-100"}`}>The Cove</span>
-                    <span className={`text-[0.65rem] tracking-[0.25em] gap-2 uppercase font-sans mt-0.5 opacity-90 ${scrolled ? "text-forest-600" : "text-sunrise-500"}`}>
-                        <span className="opacity-70 lowercase italic mr-1 text-[0.55rem]">at</span>
+                    <span className={`text-[0.7rem] md:text-xs tracking-[0.2em] md:tracking-[0.25em] gap-2 uppercase font-sans font-semibold mt-1 opacity-90 ${scrolled ? "text-forest-600" : "text-sunrise-500"}`}>
+                        <span className="opacity-70 lowercase italic mr-1.5 text-[0.6rem] md:text-[0.65rem] font-medium">at</span>
                         Rikillagaskada
                     </span>
                 </a>

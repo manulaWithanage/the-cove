@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/constants";
 
 export default function StickyCTA() {
     return (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+        <div className="fixed bottom-[5.5rem] md:bottom-6 right-4 md:right-6 z-[60] flex flex-col items-end gap-2 text-right">
             {/* Optional gentle hint tooltip */}
             <div className="bg-white text-forest-900 text-xs font-medium px-3 py-1.5 rounded-full shadow-lg opacity-0 translate-y-2 transition-all duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0 pointer-events-none hidden md:block">
                 Chat with us

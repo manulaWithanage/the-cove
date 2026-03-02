@@ -131,15 +131,15 @@ export default function ContactForm() {
                                 {/* Name & Phone */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="name" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-800/50">Full Name *</label>
+                                        <label htmlFor="name" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-500">Full Name *</label>
                                         <input
                                             type="text" id="name" name="name" required
-                                            className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 placeholder:text-sand-400 outline-none transition-colors font-light"
+                                            className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 placeholder:text-sand-500 outline-none transition-colors font-light"
                                             placeholder="Jane Doe"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="phone" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-800/50">WhatsApp / Phone *</label>
+                                        <label htmlFor="phone" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-500">WhatsApp / Phone *</label>
                                         <input
                                             type="tel" id="phone" name="phone" required
                                             className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 placeholder:text-sand-400 outline-none transition-colors font-light"
@@ -151,7 +151,7 @@ export default function ContactForm() {
                                 {/* Dates & Guests */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="dates" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-800/50">Desired Dates *</label>
+                                        <label htmlFor="dates" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-500">Desired Dates *</label>
                                         <input
                                             type="text" id="dates" name="dates" required
                                             className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 placeholder:text-sand-400 outline-none transition-colors font-light"
@@ -159,7 +159,7 @@ export default function ContactForm() {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="guests" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-800/50">Guests *</label>
+                                        <label htmlFor="guests" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-500">Guests *</label>
                                         <select
                                             id="guests" name="guests" required
                                             className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 outline-none transition-colors font-light appearance-none cursor-pointer"
@@ -174,10 +174,10 @@ export default function ContactForm() {
 
                                 {/* Message */}
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="message" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-800/50">Special Requests</label>
+                                    <label htmlFor="message" className="text-xs font-sans tracking-[0.12em] uppercase font-semibold text-sand-500">Special Requests</label>
                                     <textarea
                                         id="message" name="message" rows={3}
-                                        className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 placeholder:text-sand-400 outline-none transition-colors font-light resize-none"
+                                        className="w-full bg-transparent border-b border-sand-300 focus:border-forest-700 py-3 text-forest-900 placeholder:text-sand-500 outline-none transition-colors font-light resize-none"
                                         placeholder="Dietary needs, special occasions, excursion preferences…"
                                     />
                                 </div>

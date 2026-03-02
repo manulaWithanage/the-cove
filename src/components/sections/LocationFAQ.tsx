@@ -17,11 +17,11 @@ export default function LocationFAQ() {
     ];
 
     return (
-        <section id="location" className="py-32 bg-white selection:bg-sand-100">
+        <section id="location" className="pt-32 pb-16 bg-white selection:bg-sand-100">
             <div className="container mx-auto px-6 sm:px-12 max-w-7xl">
 
-                <div className="mb-24 text-center max-w-2xl mx-auto">
-                    <p className="text-forest-700 font-sans tracking-[0.2em] text-xs uppercase font-semibold mb-6">
+                <div className="mb-16 md:mb-24 text-left md:text-center max-w-2xl md:mx-auto">
+                    <p className="text-forest-700 font-sans tracking-[0.2em] text-xs uppercase font-semibold mb-4 md:mb-6">
                         Information
                     </p>
                     <h2 className="text-4xl lg:text-5xl font-serif text-sand-900 leading-tight font-light">

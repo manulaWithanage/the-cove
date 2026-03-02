@@ -114,7 +114,7 @@ export default function Footer() {
                         © {currentYear} {siteConfig.name}. All rights reserved.
                     </p>
                     <p className="text-white/20 text-xs font-sans">
-                        Designed with care in Sri Lanka 🌿
+                        Designed by <a href="https://mettabyte.lk" target="_blank" rel="noopener noreferrer" className="text-white/20 text-xs font-sans hover:text-white transition-colors duration-200">MettaByte</a>
                     </p>
                 </div>
             </div>

@@ -72,7 +72,7 @@ export default function MobileCarousel({
     const dotInactive = isDark ? "bg-white/30 w-1.5 h-1.5" : "bg-forest-900/20 w-1.5 h-1.5";
 
     return (
-        <div className={`relative ${className}`}>
+        <div className={`relative pb-4 md:pb-0 ${className}`}>
             {/* Track */}
             <div
                 ref={trackRef}
